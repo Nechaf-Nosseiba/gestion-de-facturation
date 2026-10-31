@@ -1,0 +1,301 @@
+/* Réinitialisation des styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Arrière-plan avec animation */
+body {
+    /* On définit deux couches : un dégradé et l'image de fond */
+    background: 
+        linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.9)), 
+        url('https://source.unsplash.com/1920x1080/?electricity,energy') no-repeat center/cover fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    /* On ajoute deux animations : zoom et déplacement */
+    animation: bgZoom 20s ease-in-out infinite, bgShift 30s ease-in-out infinite;
+  
+
+}
+
+/* Animation de zoom sur le fond */
+@keyframes bgZoom {
+    0%, 100% {
+        background-size: 100% 100%;
+    }
+    50% {
+        background-size: 110% 110%;
+    }
+}
+
+/* Animation de déplacement sur le fond */
+@keyframes bgShift {
+    0%, 100% {
+        background-position: center;
+    }
+    50% {
+        background-position: top center;
+    }
+}
+
+/* Conteneur du formulaire */
+.login-page {
+    background: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(255, 128, 0, 0.7);
+    backdrop-filter: blur(10px); /* Effet verre */
+    margin-top: 120px; /* Espace en haut pour séparer du header fixe */
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+
+/* Titre */
+.login-page h2 {
+    color: #FF8000;
+    margin-bottom: 20px;
+}
+
+/* Champs de saisie */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid white;
+    border-radius: 6px;
+    background: transparent;
+    color: white;
+    outline: none;
+    padding-left: 40px;
+}
+
+/* Effet au focus */
+.input-group input:focus {
+    border-color: #FF8000;
+}
+
+/* Icônes */
+.input-group i {
+    position: absolute;
+    left: 250px;
+    top: 50%;
+    transform: translateY(-20%);
+    color: white;
+    font-size: 18px;
+}
+
+/* Bouton de connexion */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #FF8000;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    color: white;
+}
+
+.login-btn:hover {
+    background: #e67300;
+    transform: scale(1.05);
+}
+
+/* Lien mot de passe oublié */
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #FF8000;
+}
+
+/* Section d'inscription */
+.register-link {
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: #FF8000;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.register-link a:hover {
+    color: #e67300;
+}
+
+/* Checkbox Remember me */
+.remember-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.remember-login input {
+    margin-right: 5px;
+}
+
+.remember-login a {
+    color: white;
+    text-decoration: none;
+}
+
+.remember-login a:hover {
+    color: #FF8000;
+}
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 75px; /* Ajuste la taille si nécessaire */
+    height: auto; /* Garde les proportions */
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Logo en haut à gauche */
+
+/* Style global du header */
+header {
+    background-color: rgba(0, 51, 102, 0.9); /* Couleur bleu foncé */
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 3px solid #ffffff; /* Barre blanche de 3px */
+    animation: slideDown 1s ease-out forwards;
+}
+
+/* Style commun aux deux titres */
+.company-name {
+    margin: 0;
+    font-size: 24px;         /* Ajustez la taille selon vos besoins */
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+
+/* Spécificités pour le texte arabe */
+.arabic {
+    direction: rtl;         /* Écriture de droite à gauche */
+    font-family: 'Amiri', serif; /* Police adaptée pour l'arabe */
+}
+
+/* Spécificités pour le texte français */
+.french {
+    direction: ltr;         /* Écriture de gauche à droite */
+    font-family: 'Poppins', sans-serif;
+    margin-top: 5px;        /* Petit espace entre les deux titres */
+}
+
+/* Animation du header (slide down) */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* --- Barre de navigation --- */
+.navbar {
+    background-color:rgba(0, 51, 102, 0.9);;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+  }
+  
+  .logo img {
+    position: left;
+    top: -7px;
+    left: 0px;
+    width: 75px; /* Ajuste la taille si nécessaire */
+    height: 75px; /* Garde les proportions */
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  }
+  
+/* Le footer reste en bas grâce à flex: 1 sur .content */
+
+.footer {
+    background-color: #002b5c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px; /* Centre verticalement le texte */
+  }
+  
+.contact-box {
+  background: rgba(0, 73, 144, 0.8); /* Bleu semi-transparent */
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  width: 350px; /* Ajuste la largeur si besoin */
+    position: absolute;
+    top: 70%;
+    right: 5%; /* Décale du bord droit */
+    transform: translateY(-50%);
+    
+  
+}
+
+.contact-section{
+  background-image: url('map.png');
+  background-size: cover;  /* Ajuste l’image sans répétition */
+  background-position: center; /* Centre l’image */
+  background-repeat: no-repeat; /* Empêche la répétition */
+  background-attachment: fixed; /* Fixe l’image pour un effet plus pro */
+  width: 100%;
+  height: 100vh; /* Ajuste à la hauteur de l’écran */
+}
+
+.contact-box h2 {
+  text-align: left;
+  border-bottom: 2px solid white;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
